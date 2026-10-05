@@ -174,3 +174,11 @@ df=pd.DataFrame({
 df["Data"] = pd.to_datetime(df["Date"])
 
 df["Date"].dt.year
+
+
+df["End"] - df["start"]
+
+
+df["Date"].dt.day_name()
+
+df["Date"].dt.month_name()
