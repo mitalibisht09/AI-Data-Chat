@@ -182,3 +182,13 @@ df["End"] - df["start"]
 df["Date"].dt.day_name()
 
 df["Date"].dt.month_name()
+
+df.sort_values("Date")
+
+df[df["Date"]>"2026-01-01"]
+
+df.nunique()
+
+df["Department"].value_count()
+
+df["department"]=df["department"].replace("HR","Human Resource")
