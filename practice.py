@@ -192,3 +192,26 @@ df.nunique()
 df["Department"].value_count()
 
 df["department"]=df["department"].replace("HR","Human Resource")
+#
+df["Marks"].apply(lambda x: x +5)
+df["Grade"].map({
+"A":"Excellent",
+"B":"Good",
+"C":"Average"
+})
+
+pd.concat([df1,df2],ignore_index=True)
+pd.concat([df1,df2],axis=1)
+
+pd.pivot_table(
+
+   df,
+   values="Sales",
+   index="Product",
+   aggfunc="sum"
+)
+
+index="Product"
+
+#means average
+aggfunc="mean"
