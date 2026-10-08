@@ -215,3 +215,7 @@ index="Product"
 
 #means average
 aggfunc="mean"
+
+pd.crossa(df["Department"],df["Gender"])
+
+df["Sales"].rolling(3).mean()
