@@ -219,3 +219,19 @@ aggfunc="mean"
 pd.crossa(df["Department"],df["Gender"])
 
 df["Sales"].rolling(3).mean()
+
+
+df.groupby("Department")
+["Salary"].transform("mean")
+
+df["Sales"].shift(1)
+
+df["Sales"].diff()
+
+Q1 = df["Sales"].quantile(0.25)
+Q3= df["Sales"].quantity(0.75)
+IQR = Q3-Q1 
+
+df.corr(numeric_only=True)
+
+df.shape
