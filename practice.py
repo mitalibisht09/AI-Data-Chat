@@ -235,3 +235,10 @@ IQR = Q3-Q1
 df.corr(numeric_only=True)
 
 df.shape
+
+df.isnull().sum()/len(df)*100
+df["Salary"]=df["Salary"].fillna(df["Salary"].median())
+
+df.groupby("Department")["Salary"].mean()
+df.groupby("Product")["Sales"].sum()
+df.sort_value("Marks",ascending=False)
