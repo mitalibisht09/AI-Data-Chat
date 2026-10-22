@@ -242,3 +242,17 @@ df["Salary"]=df["Salary"].fillna(df["Salary"].median())
 df.groupby("Department")["Salary"].mean()
 df.groupby("Product")["Sales"].sum()
 df.sort_value("Marks",ascending=False)
+
+#top 2 students
+df.nlargest(2,"Marks")
+
+#how to add and make new column name revenue =price*quantity
+df["Revenue"]=df["price"]*df["Quantity"]
+
+#how to define highest salary in each department?
+df.groupby("department")["salary"].max()
+
+df["Result"]=df["Marks"].apply(lambda x: "Pass"if x>=80 else "Fail")
+
+#calculate sum of salary
+df["salary"].sum()
