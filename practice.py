@@ -256,3 +256,10 @@ df["Result"]=df["Marks"].apply(lambda x: "Pass"if x>=80 else "Fail")
 
 #calculate sum of salary
 df["salary"].sum()
+
+
+df.groupby("Department")["Employee"].count()
+
+df["Marks"].mean()
+
+df.groupby("Product")["Sales"].sum()idxmax()
