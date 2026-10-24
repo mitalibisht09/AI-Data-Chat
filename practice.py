@@ -262,4 +262,15 @@ df.groupby("Department")["Employee"].count()
 
 df["Marks"].mean()
 
-df.groupby("Product")["Sales"].sum()idxmax()
+df.groupby("Product")["Sales"].sum().idxmax()
+
+
+df.loc[df["Sales"].idxmax()]
+
+df[df["Marks"]>df["Marks"].mean()]
+
+df["Sales_Percentage"]=df["Sales"]/df["Sales"].sum()*100
+
+df.groupby("Product")["Sales"].sum()/df["Sales"].sum()*100
+
+df["Cumulative_sales"]=df["Sales"].cumsum()
