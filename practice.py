@@ -274,3 +274,11 @@ df["Sales_Percentage"]=df["Sales"]/df["Sales"].sum()*100
 df.groupby("Product")["Sales"].sum()/df["Sales"].sum()*100
 
 df["Cumulative_sales"]=df["Sales"].cumsum()
+
+
+df["Sales_change_%"]=df["Sales"].pct_change()*100
+
+
+df["Rank"]=df["Marks"].rank(asending=False,method="min")
+
+df[df["Marks"].isnull()]
