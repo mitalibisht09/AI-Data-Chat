@@ -1,9 +1,9 @@
-
+m
 import pandas as pd
 print(pd.__version__)
 
 import pandas as pd
-
+4
 # Dictionary se DataFrame banate hain
 data = {
     "Name": ["Aman", "Priya", "Rohit", "Simran"],
@@ -282,3 +282,28 @@ df["Sales_change_%"]=df["Sales"].pct_change()*100
 df["Rank"]=df["Marks"].rank(asending=False,method="min")
 
 df[df["Marks"].isnull()]
+
+
+import pandas as pd
+
+data = {
+    "Order_ID": [101, 102, 103, 104, 105],
+    "Product": ["Laptop", "Phone", "Tablet", "Phone", "Laptop"],
+    "Price": [50000, 20000, 15000, 20000, 50000],
+    "Quantity": [2, 3, 2, 1, 1],
+    "City": ["Delhi", "Mumbai", "Delhi", "Noida", "Mumbai"]
+}
+
+df = pd.DataFrame(data)
+
+df["Revenue"] = df["Price"] * df["Quantity"]
+
+print(df)
+
+# 1. Total revenue for each city
+city_revenue = df.groupby("City")["Revenue"].sum()
+print(city_revenue)
+
+# 2. City with the highest total revenue
+best_city = city_revenue.idxmax()
+print("Highest revenue city:", best_city)
