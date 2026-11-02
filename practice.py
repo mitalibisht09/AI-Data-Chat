@@ -307,3 +307,19 @@ print(city_revenue)
 # 2. City with the highest total revenue
 best_city = city_revenue.idxmax()
 print("Highest revenue city:", best_city)
+
+# 1. Calculate total revenue for each product
+product_revenue = df.groupby("Product")["Revenue"].sum()
+
+print(product_revenue)
+
+# 2. Find the product with the highest revenue
+best_product = product_revenue.idxmax()
+
+print("Best performing product:", best_product)
+
+# Filter orders with revenue below 50000
+low_orders = df[df["Revenue"] < 50000]
+
+# Display selected columns
+print(low_orders[["Order_ID", "Product", "Revenue"]])
